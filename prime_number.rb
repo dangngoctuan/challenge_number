@@ -16,7 +16,6 @@ class PrimeNumber
 
   def isPrimeNumber
     @range.select do |arr|
-      binding.pry
       check_prime_number(arr)
     end
   end
