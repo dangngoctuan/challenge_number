@@ -1,12 +1,23 @@
 class PrimeNumber
-  def isPrimeNumber
-    first_number = 2
-    range_number = 1000
-    range = (first_number...range_number).to_a
-    array = range.each_with_object([]) do |e, result|
-      if e % first_number != 0
-        result << e
+  def initialize
+    @first_number = 2
+    @range_number = 1000
+    @range = (@first_number..@range_number).to_a
+  end
+
+  def check_prime_number(number)
+    for i in @first_number..number - 1
+      if number % i == 0
+        return false
       end
+    end
+    true
+  end
+
+  def isPrimeNumber
+    @range.select do |arr|
+      binding.pry
+      check_prime_number(arr)
     end
   end
 end
